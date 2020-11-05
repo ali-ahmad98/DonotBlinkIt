@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+// import { highlight, languages } from "prismjs/components/prism-core";
 import ReactTooltip from "react-tooltip";
-import "prismjs/components/prism-erlang";
-import "prismjs/themes/prism-twilight.css";
+// import "prismjs/components/prism-erlang";
+// import "prismjs/themes/prism-twilight.css";
 import { connect } from "react-redux";
 import "prismjs/plugins/line-numbers/prism-line-numbers";
 import { MDBBtn, MDBRow } from "mdbreact";
@@ -199,7 +200,7 @@ class EditCode extends Component {
     let options = {
       lineNumbers: true,
     };
-    const { isShareLink, URLload } = this.state;
+    const { isShareLink, shareUrl, URLload } = this.state;
     const { mode } = this.props;
 
     return (
