@@ -200,7 +200,7 @@ class EditCode extends Component {
     let options = {
       lineNumbers: true,
     };
-    const { isShareLink, shareUrl, URLload } = this.state;
+    const { isShareLink, URLload } = this.state;
     const { mode } = this.props;
 
     return (
