@@ -1,0 +1,18 @@
+.buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputStyle { 
+    color: white !important;
+    width: 1000px !important;
+    padding-top: 10px !important;
+    overflow-y: auto !important;
+    line-height: initial !important;
+}
+
+.success_btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
