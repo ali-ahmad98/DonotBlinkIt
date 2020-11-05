@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { highlight, languages } from "prismjs/components/prism-core";
 import ReactTooltip from "react-tooltip";
 import "prismjs/components/prism-erlang";
 import "prismjs/themes/prism-twilight.css";
 import { connect } from "react-redux";
 import "prismjs/plugins/line-numbers/prism-line-numbers";
-import { MDBBtn, MDBCol, MDBContainer, MDBRow } from "mdbreact";
+import { MDBBtn, MDBRow } from "mdbreact";
 import "../App.css";
 import { setSentences, setMode } from "../store/sentences/action";
 import CodeMirror from "react-codemirror";
@@ -16,9 +15,7 @@ import baseURL from "../config/baseURL";
 import { Navbar } from "../components/navbar";
 import Switch from "../components/switchSelector";
 import { Loader } from "../components/loader";
-import FullScreenMode from "../components/FullScreen";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 class EditCode extends Component {
@@ -202,7 +199,7 @@ class EditCode extends Component {
     let options = {
       lineNumbers: true,
     };
-    const { isShareLink, shareUrl, URLload } = this.state;
+    const { isShareLink, URLload } = this.state;
     const { mode } = this.props;
 
     return (

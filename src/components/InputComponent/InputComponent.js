@@ -106,19 +106,20 @@ class InputComponent extends Component {
     this.setState({ inputValue: text });
   };
   render() {
-    const { inputValue, showSection, sentences } = this.state;
-    let [notTriedSentencesCount, masteredCount, notMasteredCount] = [0, 0, 0];
-    sentences.forEach((obj) => {
-      if (!obj.tried) {
-        ++notTriedSentencesCount;
-      } else {
-        if (obj.mastered) {
-          ++masteredCount;
-        } else if (obj.mastered === false) {
-          ++notMasteredCount;
-        }
-      }
-    });
+    const { inputValue, showSection } = this.state;
+    // const { inputValue, showSection, sentences } = this.state;
+    // let [notTriedSentencesCount, masteredCount, notMasteredCount] = [0, 0, 0];
+    // sentences.forEach((obj) => {
+    //   if (!obj.tried) {
+    //     ++ notTriedSentencesCount;
+    //   } else {
+    //     if (obj.mastered) {
+    //       ++masteredCount;
+    //     } else if (obj.mastered === false) {
+    //       ++notMasteredCount;
+    //     }
+    //   }
+    // });
 
     return (
       <MDBContainer>

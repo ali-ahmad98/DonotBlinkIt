@@ -3,8 +3,6 @@ import "./App.css";
 import InputComponent from "./components/InputComponent/InputComponent";
 import Footer from "./components/footer/footer";
 import { Navbar } from "./components/navbar";
-import FullScreenMode from "./components/FullScreen";
-import { ToastContainer } from "react-toastify";
 
 class App extends React.Component {
   constructor(props) {
@@ -12,13 +10,7 @@ class App extends React.Component {
     this.contentEditable = React.createRef();
     this.state = {
       // Words
-      words: [
-        "hello, monkey eats banana",
-        "monkey ,monkey",
-        "world, monkey",
-        "set on, fire",
-        "write your name",
-      ],
+      words: ["hello, monkey eats banana", "monkey ,monkey", "world, monkey", "set on, fire", "write your name"],
       per: ["perfect", "amazing", "flawless"],
       selectedNote: "",
 
@@ -59,9 +51,7 @@ class App extends React.Component {
     setTimeout(() => {
       this.setState({
         clickedReady: true,
-        selectedEnd: this.state.per[
-          Math.floor(Math.random() * this.state.per.length)
-        ],
+        selectedEnd: this.state.per[Math.floor(Math.random() * this.state.per.length)],
         inputHidden: false,
         hideReady: true,
         hideReadys: true,
@@ -135,10 +125,7 @@ class App extends React.Component {
 
     for (var i = 0; i < inputText.length; i++) {
       if (this.state.selectedNote.includes(inputText[i]) === true) {
-        if (
-          this.state.inputWord.indexOf(inputText[i]) ===
-          this.state.selectedNote.indexOf(inputText[i])
-        ) {
+        if (this.state.inputWord.indexOf(inputText[i]) === this.state.selectedNote.indexOf(inputText[i])) {
           inputStyle = {
             color: "blue",
             // borderBottomColor: 'blue'
@@ -234,8 +221,6 @@ class App extends React.Component {
     this.setState({ modalId: id });
   };
   render() {
-    const { showIntroduction, alreadyShown } = this.state;
-
     return (
       <>
         {/* navbar */}
@@ -244,10 +229,7 @@ class App extends React.Component {
         {/* Slider starts */}
         <div
           style={{
-            height:
-              window.innerWidth > 700
-                ? window.innerHeight
-                : window.innerHeight + 400,
+            height: window.innerWidth > 700 ? window.innerHeight : window.innerHeight + 400,
           }}
         >
           <div

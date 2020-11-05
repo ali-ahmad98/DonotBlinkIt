@@ -10,9 +10,7 @@ import GoodSound from "../../Musics/good.wav";
 import MasteredSound from "../../Musics/mastered.wav";
 import PurrrSound from "../../Musics/purrr.wav";
 import { setSentences, setMode } from "../../store/sentences/action";
-import { Instruction } from "./instruction";
 import { Navbar } from "../../components/navbar";
-import FullScreenMode from "../../components/FullScreen";
 
 class LearningSession extends Component {
   constructor(props) {
@@ -371,7 +369,10 @@ class LearningSession extends Component {
   };
 
   toggleFullScreen = () => {
-    if (window.fullScreen || (window.innerWidth == window.screen.width && window.innerHeight == window.screen.height)) {
+    if (
+      window.fullScreen ||
+      (window.innerWidth === window.screen.width && window.innerHeight === window.screen.height)
+    ) {
       document.exitFullscreen().catch(() => null);
     } else {
       document
@@ -682,7 +683,7 @@ class LearningSession extends Component {
                         marginTop: "12px",
                       }}
                     >
-                      {this.props.mode == "memory" && (
+                      {this.props.mode === "memory" && (
                         <>
                           <span
                             data-tip={`
@@ -971,6 +972,7 @@ class LearningSession extends Component {
                         }}
                         href={`http://translate.google.com?text=${this.state.inputWord}`}
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         Translate
                       </a>
@@ -978,6 +980,8 @@ class LearningSession extends Component {
                         <span>Press Enter to get another one</span>
                       </ReactTooltip>
                       <a
+                        href={() => false}
+                        rel="noopener noreferrer"
                         style={{
                           color: "black",
                           fontSize: "20px",
